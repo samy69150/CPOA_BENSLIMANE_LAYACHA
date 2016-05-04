@@ -51,22 +51,22 @@ public class Appli {
             }
         } while (etat == false);
 
-        // Instanciation des objets nécessaires à l'application
-        try {
-            // les DAO nécessaires
-            daoEmp = new DaoEmp(laConnexion);
-            // les modèles de données avec le DAO à partir duquel se feront les échanges de données
-            final ModeleJTable leModele = new ModeleJTable(daoEmp);
-            // la fenetre principale de l'application qui tourne dans l'EDT
-            javax.swing.SwingUtilities.invokeLater(new Runnable() {
-                @Override
-                public void run() {
-                    new FenetreApplication(leModele).setVisible(true);
-                }
-            });
-        } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "problème dans la création des objets nécessaires" + ex.getMessage(),
-                    "avertissement", JOptionPane.WARNING_MESSAGE);
-        }
+//        // Instanciation des objets nécessaires à l'application
+//        try {
+//            // les DAO nécessaires
+//            daoEmp = new DaoEmp(laConnexion);
+//            // les modèles de données avec le DAO à partir duquel se feront les échanges de données
+//            final ModeleJTable leModele = new ModeleJTable(daoEmp);
+//            // la fenetre principale de l'application qui tourne dans l'EDT
+//            javax.swing.SwingUtilities.invokeLater(new Runnable() {
+//                @Override
+//                public void run() {
+//                    new FenetreApplication(leModele).setVisible(true);
+//                }
+//            });
+//        } catch (SQLException ex) {
+//            JOptionPane.showMessageDialog(null, "problème dans la création des objets nécessaires" + ex.getMessage(),
+//                    "avertissement", JOptionPane.WARNING_MESSAGE);
+//        }
     }
 }
