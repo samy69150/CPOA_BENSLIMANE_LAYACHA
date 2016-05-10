@@ -101,12 +101,12 @@ public class FenetreApplication extends javax.swing.JFrame {
     
     private void btSupprimerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSupprimerActionPerformed
         // TODO add your handling code here:
-       /* try {
+       try {
             int ligne = laTable.getSelectedRow();
             leModele.supprimerVip(ligne);
         } catch (Exception e) {
             System.out.println("Exception à la suppression : " + e.getMessage());
-        }*/
+        }
     }//GEN-LAST:event_btSupprimerActionPerformed
 
     

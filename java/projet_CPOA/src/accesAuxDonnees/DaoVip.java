@@ -46,14 +46,14 @@ public class DaoVip {
     
     
 
-//    public void supprimerEmploye(int numEmp) throws SQLException {
-//        String requete = "delete from EMP where empno = ?";
-//        PreparedStatement pstmt = connexion.prepareStatement(requete);
-//        pstmt.setInt(1, numEmp);
-//        pstmt.executeUpdate();
-//        pstmt.close();
-//    }
-//
+    public void supprimerVip(int numEmp) throws SQLException {
+        String requete = "delete from Vip where numVip = ?";
+        PreparedStatement pstmt = connexion.prepareStatement(requete);
+        pstmt.setInt(1, numEmp);
+        pstmt.executeUpdate();
+        pstmt.close();
+    }
+
     public void insererVip(Vip emp) throws SQLException {
         String requete = "insert into Vip (numVip,nomVip,prenomVip,civilite,dateNaissance,lieuNaissance,codeRole,pays,codeStatut) values(?,?,?,?,?,?,?,?,?)";
         PreparedStatement pstmt = connexion.prepareStatement(requete);

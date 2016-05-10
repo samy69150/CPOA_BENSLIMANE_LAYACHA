@@ -77,13 +77,13 @@ public class ModeleJTable extends AbstractTableModel {
         leConteneur.add(emp);
         this.fireTableDataChanged();
     }
-//
-//    public void supprimerVip(int ligne) throws SQLException {
-//        int numVip = (int) getValueAt(ligne, 0);
-//        leDaoVip.supprimerVip(numVip);
-//        leConteneur.remove(ligne);
-//        this.fireTableDataChanged();
-//    }
+
+    public void supprimerVip(int ligne) throws SQLException {
+        int numVip = (int) getValueAt(ligne, 0);
+        leDaoVip.supprimerVip(numVip);
+        leConteneur.remove(ligne);
+        this.fireTableDataChanged();
+    }
 
     public void chargerLesVip() throws SQLException {
         leDaoVip.lireLesVip(leConteneur);
