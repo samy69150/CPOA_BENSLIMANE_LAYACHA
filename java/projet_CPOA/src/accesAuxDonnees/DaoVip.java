@@ -43,6 +43,8 @@ public class DaoVip {
         rset.close();
         pstmt.close();     
     }
+    
+    
 
 //    public void supprimerEmploye(int numEmp) throws SQLException {
 //        String requete = "delete from EMP where empno = ?";
@@ -52,13 +54,19 @@ public class DaoVip {
 //        pstmt.close();
 //    }
 //
-//    public void insererEmploye(Employe emp) throws SQLException {
-//        String requete = "insert into EMP (empno, ename, job) values(?,?,?)";
-//        PreparedStatement pstmt = connexion.prepareStatement(requete);
-//        pstmt.setInt(1, emp.getNumEmp());
-//        pstmt.setString(2, emp.getNomEmp());
-//        pstmt.setString(3, emp.getJobEmp());
-//        pstmt.executeUpdate();
-//        pstmt.close();
-//    }
+    public void insererVip(Vip emp) throws SQLException {
+        String requete = "insert into Vip (numVip,nomVip,prenomVip,civilite,dateNaissance,lieuNaissance,codeRole,pays,codeStatut) values(?,?,?,?,?,?,?,?,?)";
+        PreparedStatement pstmt = connexion.prepareStatement(requete);
+        pstmt.setInt(1, emp.getNumVip());
+        pstmt.setString(2, emp.getNomVip());
+        pstmt.setString(3, emp.getPrenomVip());
+        pstmt.setString(4, emp.getCivilite());
+        pstmt.setString(5, emp.getDateNaissance());
+        pstmt.setString(6, emp.getLieuNaissance());
+        pstmt.setString(7, emp.getCodeRole());
+        pstmt.setString(8, emp.getPays());
+        pstmt.setString(9, emp.getCodeStatut());
+        pstmt.executeUpdate();
+        pstmt.close();
+    }
 }

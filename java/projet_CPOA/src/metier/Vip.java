@@ -33,6 +33,9 @@ public class Vip {
         this.codeStatut = codeStatut;
     }
 
+    public Vip() {
+    }
+
     public String getCodeRole() {
         return codeRole;
     }
