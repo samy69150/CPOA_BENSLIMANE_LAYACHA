@@ -36,6 +36,11 @@ public class Vip {
     public Vip() {
     }
 
+    public Vip(String nomVip, String prenomVip) {
+        this.nomVip = nomVip;
+        this.prenomVip = prenomVip;
+    }
+
     public String getCodeRole() {
         return codeRole;
     }

@@ -7,7 +7,9 @@ package ihm;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import metier.Evenement;
 import metier.Vip;
+import modelVip.ModeleJListe;
 import modelVip.ModeleJTable;
 
 /**
@@ -17,9 +19,11 @@ import modelVip.ModeleJTable;
 public class FenetreApplication extends javax.swing.JFrame {
 
     private ModeleJTable leModele;
+    private ModeleJListe laListe;
 
-    public FenetreApplication(ModeleJTable leModele) {
+    public FenetreApplication(ModeleJTable leModele,ModeleJListe laListe) {
         this.leModele = leModele;
+        this.laListe=laListe;
         // initialisation
         initComponents();
         // affichage
@@ -43,6 +47,12 @@ public class FenetreApplication extends javax.swing.JFrame {
         laTable = new javax.swing.JTable();
         btSupprimer = new javax.swing.JButton();
         btInserer = new javax.swing.JButton();
+        jSeparator1 = new javax.swing.JSeparator();
+        mariageBt = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        divorceBt = new javax.swing.JButton();
+        jSeparator2 = new javax.swing.JSeparator();
+        addPhotoBt = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setTitle("Affichage des employés");
@@ -69,20 +79,63 @@ public class FenetreApplication extends javax.swing.JFrame {
             }
         });
 
+        mariageBt.setText("Mariage");
+        mariageBt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mariageBtActionPerformed(evt);
+            }
+        });
+
+        divorceBt.setText("Divorce");
+        divorceBt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                divorceBtActionPerformed(evt);
+            }
+        });
+
+        addPhotoBt.setText("Ajouter une photo");
+        addPhotoBt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addPhotoBtActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 857, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(283, 283, 283)
+                        .addComponent(btInserer, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(132, 132, 132)
+                        .addComponent(btSupprimer)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(411, 411, 411))
             .addGroup(layout.createSequentialGroup()
-                .addGap(64, 64, 64)
-                .addComponent(btInserer, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 109, Short.MAX_VALUE)
-                .addComponent(btSupprimer)
-                .addGap(66, 66, 66))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(287, 287, 287)
+                        .addComponent(mariageBt, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(136, 136, 136)
+                        .addComponent(divorceBt, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(35, 35, 35)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jSeparator1, javax.swing.GroupLayout.DEFAULT_SIZE, 818, Short.MAX_VALUE)
+                            .addComponent(jSeparator2)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(399, 399, 399)
+                        .addComponent(addPhotoBt)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -91,9 +144,21 @@ public class FenetreApplication extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(38, 38, 38)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btSupprimer)
-                    .addComponent(btInserer))
-                .addContainerGap(39, Short.MAX_VALUE))
+                    .addComponent(btSupprimer, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btInserer, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(28, 28, 28)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(mariageBt, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(divorceBt, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(44, 44, 44)
+                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(47, 47, 47)
+                .addComponent(addPhotoBt)
+                .addContainerGap(60, Short.MAX_VALUE))
         );
 
         pack();
@@ -131,10 +196,37 @@ public class FenetreApplication extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_formWindowClosing
 
+    private void divorceBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_divorceBtActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_divorceBtActionPerformed
+
+    private void addPhotoBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addPhotoBtActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_addPhotoBtActionPerformed
+
+    private void mariageBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mariageBtActionPerformed
+        // TODO add your handling code here:
+         try {
+            Evenement evenement= new Evenement();
+            FenetreMariage fenMariage = new FenetreMariage(this,laListe,evenement);
+            if (fenMariage.doModal() == true) {
+                leModele.insererMariage(evenement); //faire dans le dao insererMariage avec les nom et prenom
+            }
+        } catch (Exception e) {
+            System.out.println("Probleme à l'affichage : " + e.getMessage());
+        } 
+    }//GEN-LAST:event_mariageBtActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton addPhotoBt;
     private javax.swing.JButton btInserer;
     private javax.swing.JButton btSupprimer;
+    private javax.swing.JButton divorceBt;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
     private javax.swing.JTable laTable;
+    private javax.swing.JButton mariageBt;
     // End of variables declaration//GEN-END:variables
 }

@@ -225,30 +225,40 @@ public class FenetreSaisie extends javax.swing.JDialog {
     private void btValidActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btValidActionPerformed
         // TODO add your handling code here:
         try {
-            emp.setNumVip(leNumVip++);         
+            emp.setNumVip(leNumVip);   
+            leNumVip++;
+            
             if (txNom.getText().isEmpty()) {
                 throw new Exception("champ nom vide");
             }
             emp.setNomVip(txNom.getText());
+            
             if (txPrenom.getText().isEmpty()) {
                 throw new Exception("champ prenom vide");
             }
             emp.setPrenomVip(txPrenom.getText());
+            
             if (jourBt.getText().isEmpty() || moisBt.getText().isEmpty()|| anneeBt.getText().isEmpty()) {
                 throw new Exception("champ date incomplet ou vide");
-            }
-            emp.setCivilite(String.valueOf(CiviliteBt.getSelectedItem()));
+            }  
             emp.setDateNaissance(jourBt.getText()+ '/' + moisBt.getText() + '/' + anneeBt.getText());
+            
+            emp.setCivilite(String.valueOf(CiviliteBt.getSelectedItem()));
+            
             if (lieuNaissBt.getText().isEmpty()) {
                 throw new Exception("champ lieu de naissance vide");
             }
             emp.setLieuNaissance(lieuNaissBt.getText());
+            
             emp.setCodeRole(String.valueOf(roleBt.getSelectedItem()));
+            
             if (paysBt.getText().isEmpty()) {
                 throw new Exception("champ pays vide");
             }
             emp.setPays(paysBt.getText());
+            
             emp.setCodeStatut(String.valueOf(codeStatutBt.getSelectedItem()));
+            
             etatSortie = true;
             this.dispose();
         } catch (Exception e) {
