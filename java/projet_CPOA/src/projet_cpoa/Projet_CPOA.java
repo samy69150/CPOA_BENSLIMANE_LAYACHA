@@ -5,6 +5,7 @@
  */
 package projet_cpoa;
 
+import accesAuxDonnees.DaoEvenement;
 import ihm.FenetreIdentification;
 import accesAuxDonnees.DaoVip;
 import accesAuxDonnees.SourceMySql;
@@ -16,6 +17,7 @@ import javax.sql.DataSource;
 import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
+import modelVip.ModeleJListe;
 import modelVip.ModeleJTable;
 /**
  *
@@ -56,13 +58,15 @@ public class Projet_CPOA {
         try {
             // les DAO nécessaires
             daoVip = new DaoVip(laConnexion);
+            DaoEvenement leDaoEvenement = new DaoEvenement(laConnexion);
             // les modèles de données avec le DAO à partir duquel se feront les échanges de données
             final ModeleJTable leModele = new ModeleJTable(daoVip);
+            final ModeleJListe laListe = new ModeleJListe(leDaoEvenement);
             // la fenetre principale de l'application qui tourne dans l'EDT
             javax.swing.SwingUtilities.invokeLater(new Runnable() {
                 @Override
                 public void run() {
-                    new FenetreApplication(leModele).setVisible(true);
+                    new FenetreApplication(leModele,laListe).setVisible(true);
                 }
             });
         } catch (SQLException ex) {

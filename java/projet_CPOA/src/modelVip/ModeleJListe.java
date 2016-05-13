@@ -65,8 +65,7 @@ public class ModeleJListe extends AbstractListModel {
     
     public void insererVip(Vip emp) throws SQLException {
         leDaoEvenement.insererVip(emp);
-        Vip temp=new Vip(emp.getNomVip(),emp.getPrenomVip());
-        leConteneur.add(temp);
+        leConteneur.add(emp);
         //this.fireTableDataChanged();
     }
 }

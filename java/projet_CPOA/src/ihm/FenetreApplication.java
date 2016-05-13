@@ -108,7 +108,7 @@ public class FenetreApplication extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 857, Short.MAX_VALUE))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 881, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(283, 283, 283)
                         .addComponent(btInserer, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -179,7 +179,7 @@ public class FenetreApplication extends javax.swing.JFrame {
         // TODO add your handling code here:
          try {
             Vip emp = new Vip();
-            FenetreSaisie laSaisie = new FenetreSaisie(this, emp);
+            FenetreSaisieVip laSaisie = new FenetreSaisieVip(this, emp);
             if (laSaisie.doModal() == true) {
                 leModele.insererVip(emp);
             }
@@ -198,6 +198,7 @@ public class FenetreApplication extends javax.swing.JFrame {
 
     private void divorceBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_divorceBtActionPerformed
         // TODO add your handling code here:
+        
     }//GEN-LAST:event_divorceBtActionPerformed
 
     private void addPhotoBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addPhotoBtActionPerformed
@@ -208,10 +209,26 @@ public class FenetreApplication extends javax.swing.JFrame {
         // TODO add your handling code here:
          try {
             Evenement evenement= new Evenement();
+            int ligne1 = laTable.getSelectedRow();
+            
+            int numVip1=(int)laTable.getValueAt(ligne1, 0);
+            String nomVip1=(String)laTable.getValueAt(ligne1, 1);
+            String prenomVip1=(String)laTable.getValueAt(ligne1, 2);
+            String civiliteVip1=(String)laTable.getValueAt(ligne1, 3);
+            String date1=(String)laTable.getValueAt(ligne1, 4);
+            String lieuVip1=(String)laTable.getValueAt(ligne1, 5);
+            String codeRoleVip1=(String)laTable.getValueAt(ligne1, 6);
+            String paysVip1=(String)laTable.getValueAt(ligne1, 7);
+            String codeStatutVip1=(String)laTable.getValueAt(ligne1,8);
+            
+            Vip newVip1= new Vip(numVip1,nomVip1,prenomVip1,civiliteVip1,date1,lieuVip1,codeRoleVip1,paysVip1,codeStatutVip1);                  
+            evenement.setVip1(newVip1); 
+            
             FenetreMariage fenMariage = new FenetreMariage(this,laListe,evenement);
-            if (fenMariage.doModal() == true) {
-                leModele.insererMariage(evenement); //faire dans le dao insererMariage avec les nom et prenom
-            }
+            fenMariage.setVisible(true);
+//            if (fenMariage.doModal() == true) {
+//                laListe.insererEvenement(evenement); //faire dans le dao insererMariage avec les nom et prenom
+//            }
         } catch (Exception e) {
             System.out.println("Probleme à l'affichage : " + e.getMessage());
         } 

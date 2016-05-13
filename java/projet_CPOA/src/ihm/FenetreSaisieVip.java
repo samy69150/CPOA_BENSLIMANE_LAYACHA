@@ -11,13 +11,13 @@ import metier.Vip;
  *
  * @author Alain
  */
-public class FenetreSaisie extends javax.swing.JDialog {
+public class FenetreSaisieVip extends javax.swing.JDialog {
 
     public static int leNumVip=16;
     private Vip emp;
     private boolean etatSortie;
 
-    public FenetreSaisie(java.awt.Frame parent, Vip emp) {
+    public FenetreSaisieVip(java.awt.Frame parent, Vip emp) {
         super(parent, true);  // mode modal       
         this.emp = emp;
         etatSortie = false;

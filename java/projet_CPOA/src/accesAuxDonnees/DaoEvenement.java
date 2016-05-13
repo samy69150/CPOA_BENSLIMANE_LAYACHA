@@ -25,13 +25,22 @@ public class DaoEvenement {
     }
     
      public void lireLesVip(List<Vip> lesVip) throws SQLException {    
-        String requete = "select nomVip,prenomVip from Vip";
+        String requete = "select * from Vip where codeStatut like ? or codeStatut like ?";
         PreparedStatement pstmt = connexion.prepareStatement(requete);
-        ResultSet rset = pstmt.executeQuery(requete);
+        pstmt.setString(1,"C");
+        pstmt.setString(2,"D");
+        ResultSet rset = pstmt.executeQuery();
         while (rset.next()) {       // traitement du résulat
-            String nom = rset.getString(1);
-            String prenom = rset.getString(2);
-            Vip temp = new Vip(nom,prenom);
+            int num = rset.getInt(1);
+            String nom = rset.getString(2);
+            String prenom = rset.getString(3);
+            String civilite = rset.getString(4);
+            String dateNaiss = rset.getString(5);
+            String lieuNaiss = rset.getString(6);
+            String role = rset.getString(7);
+            String pays = rset.getString(8);
+            String statut = rset.getString(9);
+            Vip temp = new Vip(num,nom,prenom,civilite,dateNaiss,lieuNaiss,role,pays,statut);
             lesVip.add(temp);
         }
         rset.close();

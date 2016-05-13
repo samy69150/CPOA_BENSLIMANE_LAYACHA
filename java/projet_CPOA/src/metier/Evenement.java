@@ -66,6 +66,14 @@ public class Evenement {
         this.vip2.setPrenomVip(prenomVip2);
     }
 
+    public void setVip1(Vip vip1) {
+        this.vip1 = vip1;
+    }
+
+    public void setVip2(Vip vip2) {
+        this.vip2 = vip2;
+    }
+    
     public void setDateMariage(String dateMariage) {
         this.dateMariage = dateMariage;
     }
