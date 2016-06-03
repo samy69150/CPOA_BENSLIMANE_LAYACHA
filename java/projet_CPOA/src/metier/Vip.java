@@ -5,6 +5,8 @@
  */
 package metier;
 
+import java.sql.Date;
+
 /**
  *
  * @author p1422859
@@ -15,13 +17,13 @@ public class Vip {
     private String nomVip;
     private String prenomVip;
     private String civilite;
-    private String dateNaissance;
+    private Date dateNaissance;
     private String lieuNaissance;
     private String codeRole;  
     private String pays;
     private String codeStatut;
 
-    public Vip(int numVip, String nomVip, String prenomVip, String civilite, String dateNaissance, String lieuNaissance, String codeRole, String pays, String codeStatut) {
+    public Vip(int numVip, String nomVip, String prenomVip, String civilite, Date dateNaissance, String lieuNaissance, String codeRole, String pays, String codeStatut) {
         this.numVip = numVip;
         this.nomVip = nomVip;
         this.prenomVip = prenomVip;
@@ -32,14 +34,16 @@ public class Vip {
         this.pays = pays;
         this.codeStatut = codeStatut;
     }
-
-    public Vip() {
-    }
-
-    public Vip(String nomVip, String prenomVip) {
+    
+    public Vip(int numVip, String nomVip, String prenomVip) {
+        this.numVip=numVip;
         this.nomVip = nomVip;
         this.prenomVip = prenomVip;
     }
+    
+    public Vip() {
+    }
+    
 
     public String getCodeRole() {
         return codeRole;
@@ -61,7 +65,7 @@ public class Vip {
         return civilite;
     }
 
-    public String getDateNaissance() {
+    public Date getDateNaissance() {
         return dateNaissance;
     }
 
@@ -93,7 +97,7 @@ public class Vip {
         this.civilite = civilite;
     }
 
-    public void setDateNaissance(String dateNaissance) {
+    public void setDateNaissance(Date dateNaissance) {
         this.dateNaissance = dateNaissance;
     }
 
@@ -112,6 +116,10 @@ public class Vip {
     public void setCodeRole(String codeRole) {
         this.codeRole = codeRole;
     }
-    
+
+    @Override
+    public String toString() {
+        return "Vip{" + "numVip=" + numVip + ", nomVip=" + nomVip + ", prenomVip=" + prenomVip + ", civilite=" + civilite + ", dateNaissance=" + dateNaissance + ", lieuNaissance=" + lieuNaissance + ", codeRole=" + codeRole + ", pays=" + pays + ", codeStatut=" + codeStatut + '}';
+    }
     
 }

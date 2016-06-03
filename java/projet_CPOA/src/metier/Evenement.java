@@ -5,21 +5,23 @@
  */
 package metier;
 
+import java.sql.Date;
+
 /**
  *
  * @author p1422859
  */
 public class Evenement {
-    
-    private Vip vip1;
-    private Vip vip2;
-    private String dateMariage;
-    private String lieu;
-    private String dateDivorce;
 
-    public Evenement(Vip vip1, Vip vip2, String dateMariage, String lieu) {
-        this.vip1 = vip1;
-        this.vip2 = vip2;
+    private int numVip1;
+    private int numVip2;
+    private Date dateMariage;
+    private String lieu;
+    private Date dateDivorce;
+
+    public Evenement(int numVip1, int numVip2, Date dateMariage, String lieu) {
+        this.numVip1 = numVip1;
+        this.numVip2 = numVip2;
         this.dateMariage = dateMariage;
         this.lieu = lieu;
         this.dateDivorce = null;
@@ -28,15 +30,15 @@ public class Evenement {
     public Evenement() {
     }
 
-    public Vip getVip1() {
-        return vip1;
+    public int getNumVip1() {
+        return numVip1;
     }
 
-    public Vip getVip2() {
-        return vip2;
+    public int getNumVip2() {
+        return numVip2;
     }
 
-    public String getDateMariage() {
+    public Date getDateMariage() {
         return dateMariage;
     }
 
@@ -44,37 +46,19 @@ public class Evenement {
         return lieu;
     }
 
-    public String getDateDivorce() {
+    public Date getDateDivorce() {
         return dateDivorce;
     }
-    
-    public int getNumVip1() {
-         return vip1.getNumVip();
-    }
-      
-    public int getNumVip2() {
-         return vip2.getNumVip();
+
+    public void setNumVip1(int numVip1) {
+        this.numVip1 = numVip1;
     }
 
-    public void setNomVip1(String nomVip1,String prenomVip1) {
-        this.vip1.setNomVip(nomVip1);
-        this.vip1.setPrenomVip(prenomVip1);
+     public void setNumVip2(int numVip2) {
+        this.numVip2 = numVip2;
     }
 
-    public void setNomVip2(String nomVip2,String prenomVip2) {
-        this.vip2.setNomVip(nomVip2);
-        this.vip2.setPrenomVip(prenomVip2);
-    }
-
-    public void setVip1(Vip vip1) {
-        this.vip1 = vip1;
-    }
-
-    public void setVip2(Vip vip2) {
-        this.vip2 = vip2;
-    }
-    
-    public void setDateMariage(String dateMariage) {
+    public void setDateMariage(Date dateMariage) {
         this.dateMariage = dateMariage;
     }
 
@@ -82,8 +66,8 @@ public class Evenement {
         this.lieu = lieu;
     }
 
-    public void setDateDivorce(String dateDivorce) {
+    public void setDateDivorce(Date dateDivorce) {
         this.dateDivorce = dateDivorce;
-    }   
-    
+    }
+
 }

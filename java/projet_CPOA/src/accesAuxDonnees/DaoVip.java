@@ -5,6 +5,7 @@
 package accesAuxDonnees;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -32,7 +33,7 @@ public class DaoVip {
             String nom = rset.getString(2);
             String prenom = rset.getString(3);
             String civilite = rset.getString(4);
-            String dateNaiss = rset.getString(5);
+            Date dateNaiss = rset.getDate(5);
             String lieuNaiss = rset.getString(6);
             String role = rset.getString(7);
             String pays = rset.getString(8);
@@ -44,6 +45,19 @@ public class DaoVip {
         pstmt.close();     
     }
     
+    public int returnMax() throws SQLException 
+    {
+        int numVip=0;
+        String requete="select MAX(numVip) from Vip";
+        PreparedStatement pstmt = connexion.prepareStatement(requete);
+        ResultSet rset = pstmt.executeQuery(requete);
+        while (rset.next()) {
+            numVip = rset.getInt(1);
+        }
+        rset.close();
+        pstmt.close();
+        return numVip;
+    }
     
 
     public void supprimerVip(int numEmp) throws SQLException {
@@ -61,11 +75,26 @@ public class DaoVip {
         pstmt.setString(2, emp.getNomVip());
         pstmt.setString(3, emp.getPrenomVip());
         pstmt.setString(4, emp.getCivilite());
-        pstmt.setString(5, emp.getDateNaissance());
+        pstmt.setDate(5, emp.getDateNaissance());
         pstmt.setString(6, emp.getLieuNaissance());
         pstmt.setString(7, emp.getCodeRole());
         pstmt.setString(8, emp.getPays());
         pstmt.setString(9, emp.getCodeStatut());
+        pstmt.executeUpdate();
+        pstmt.close();
+    }
+    
+        public void modifierInfoVip(Vip emp) throws SQLException {
+        String requete = "UPDATE Vip SET nomVip=?, prenomVip=?, civilite=?, dateNaissance=?, lieuNaissance=?, codeRole=?, pays=? WHERE numVip=?";
+        PreparedStatement pstmt = connexion.prepareStatement(requete);
+        pstmt.setString(1, emp.getNomVip());
+        pstmt.setString(2, emp.getPrenomVip());
+        pstmt.setString(3, emp.getCivilite());
+        pstmt.setDate(4, emp.getDateNaissance());
+        pstmt.setString(5, emp.getLieuNaissance());
+        pstmt.setString(6, emp.getCodeRole());
+        pstmt.setString(7, emp.getPays());
+        pstmt.setInt(8, emp.getNumVip());
         pstmt.executeUpdate();
         pstmt.close();
     }

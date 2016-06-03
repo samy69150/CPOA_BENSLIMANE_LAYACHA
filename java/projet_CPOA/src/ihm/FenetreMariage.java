@@ -5,26 +5,29 @@
  */
 package ihm;
 
-import static ihm.FenetreSaisieVip.leNumVip;
+import java.sql.Date;
+import java.text.SimpleDateFormat;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import metier.Evenement;
 import metier.Vip;
-import modelVip.ModeleJListe;
+import modelVip.ModeleJTableMariage;
 
 /**
  *
  * @author p1422859
  */
-public class FenetreMariage extends javax.swing.JFrame {
+public class FenetreMariage extends javax.swing.JDialog {
 
-    private ModeleJListe leModele;
+    private ModeleJTableMariage leModele;
     private boolean etatSortie;
     private Evenement mariage;
+    private java.awt.Frame parent;
     
-    
-    public FenetreMariage(java.awt.Frame parent,ModeleJListe leModele,Evenement mariage) { 
+    public FenetreMariage(java.awt.Frame parent,ModeleJTableMariage leModele,Evenement mariage) { 
+        super(parent, true); 
+        this.parent=parent;
         this.leModele = leModele;
         this.mariage=mariage;
         etatSortie = false;
@@ -59,16 +62,14 @@ public class FenetreMariage extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         lieuMariageBt = new javax.swing.JTextField();
-        jourMariageBt = new javax.swing.JTextField();
-        moisMariageBt = new javax.swing.JTextField();
-        anneeMariageBt = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        part2Bt = new javax.swing.JList();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        part2Bt = new javax.swing.JTable();
+        dateMariageBt = new com.toedter.calendar.JDateChooser();
 
+        jLabel1.setFont(new java.awt.Font("Imprint MT Shadow", 0, 18)); // NOI18N
         jLabel1.setText("Creer un mariage");
 
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel3.setText("Partenaire 2");
 
         newPart2Bt.setText("Créer un VIP");
@@ -85,119 +86,107 @@ public class FenetreMariage extends javax.swing.JFrame {
             }
         });
 
-        jLabel4.setText("Lieu du Mariage");
+        jLabel4.setText("Lieu du Mariage : ");
 
-        jLabel5.setText("Date du mariage");
-
-        jLabel6.setText("/");
-
-        jLabel7.setText("/");
+        jLabel5.setText("Date du mariage : ");
 
         part2Bt.setModel(leModele);
-        jScrollPane1.setViewportView(part2Bt);
+        jScrollPane2.setViewportView(part2Bt);
+
+        dateMariageBt.setDateFormatString("d-MM-yyyy");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(128, 128, 128))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(newPart2Bt, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(36, 36, 36))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(74, 74, 74)
+                        .addComponent(jLabel3))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(86, 86, 86)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel5))
+                        .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(127, 127, 127)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel4)
-                                    .addComponent(jLabel5))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lieuMariageBt, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jourMariageBt, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(10, 10, 10)
-                                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(2, 2, 2)
-                                        .addComponent(moisMariageBt, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(anneeMariageBt, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(validerBt)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(238, 238, 238)
-                                .addComponent(jLabel1))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(251, 251, 251)
-                                .addComponent(jLabel3)))
-                        .addGap(0, 91, Short.MAX_VALUE))
+                            .addComponent(lieuMariageBt, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(dateMariageBt, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jSeparator3)))
-                .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGap(57, 57, 57)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(newPart2Bt, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27))
+                        .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 399, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(172, 172, 172)
+                        .addComponent(validerBt)))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
-                .addGap(35, 35, 35)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel3)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(38, 38, 38)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(44, 44, 44)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(60, 60, 60)
+                                .addComponent(newPart2Bt, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(31, 31, 31)
                         .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(55, 55, 55)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel4)
-                            .addComponent(lieuMariageBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(45, 45, 45)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel5)
-                            .addComponent(jourMariageBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel6)
-                            .addComponent(moisMariageBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel7)
-                            .addComponent(anneeMariageBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 70, Short.MAX_VALUE)
-                        .addComponent(validerBt)
-                        .addGap(32, 32, 32))
+                        .addGap(33, 33, 33)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lieuMariageBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel4))
+                        .addGap(31, 31, 31)
+                        .addComponent(jLabel5))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(88, 88, 88)
-                        .addComponent(newPart2Bt, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(dateMariageBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
+                .addComponent(validerBt)
+                .addGap(28, 28, 28))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void validerBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_validerBtActionPerformed
-        // TODO add your handling code here:
+       SimpleDateFormat formateur = new SimpleDateFormat("yyyy-MM-dd");
          try {
-             int index=part2Bt.getSelectedIndex();
-             Vip vip2 = leModele.getElementAt(index);   
-             mariage.setVip2(vip2);
+             
+            int ligne = part2Bt.getSelectedRow();
+            int numVip2=(int)leModele.getValueAt(ligne,0);
+            if(numVip2==mariage.getNumVip1())
+            {
+                throw new Exception("Erreur : Vous ne pouvez pas marrier le VIP avec lui-même");
+            }
+            mariage.setNumVip2(numVip2);      
              
             if (lieuMariageBt.getText().isEmpty()) {
                 throw new Exception("champ lieu Mariage vide");
             }
             mariage.setLieu(lieuMariageBt.getText());
             
-            if (jourMariageBt.getText().isEmpty() || moisMariageBt.getText().isEmpty()|| anneeMariageBt.getText().isEmpty()) {
-                throw new Exception("champ date mariage incomplet ou vide");
-            }  
-            mariage.setDateMariage(jourMariageBt.getText()+ '/' + moisMariageBt.getText() + '/' + anneeMariageBt.getText());
-            
-            int ligne2=part2Bt.getSelectedIndex();  
-            Vip temp2 = leModele.getElementAt(ligne2);     
-            mariage.setNomVip2(temp2.getNomVip(),temp2.getPrenomVip());
+            if (dateMariageBt.getDate()==null) {
+                throw new Exception("champ date mariage vide");
+            }
+            mariage.setDateMariage(Date.valueOf(formateur.format(dateMariageBt.getDate())));
     
             etatSortie = true;
             this.dispose();
@@ -210,7 +199,9 @@ public class FenetreMariage extends javax.swing.JFrame {
         // TODO add your handling code here:
         try {
             Vip emp = new Vip();
-            FenetreSaisieVip laSaisie = new FenetreSaisieVip(this, emp); //probleme du this
+            int numVipMax;
+            numVipMax=leModele.returnNumVipMax();
+            FenetreSaisieVip laSaisie = new FenetreSaisieVip(parent,emp,numVipMax); //probleme du this
             if (laSaisie.doModal() == true) {
                 leModele.insererVip(emp);
             }
@@ -224,21 +215,17 @@ public class FenetreMariage extends javax.swing.JFrame {
      */
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField anneeMariageBt;
+    private com.toedter.calendar.JDateChooser dateMariageBt;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator3;
-    private javax.swing.JTextField jourMariageBt;
     private javax.swing.JTextField lieuMariageBt;
-    private javax.swing.JTextField moisMariageBt;
     private javax.swing.JButton newPart2Bt;
-    private javax.swing.JList part2Bt;
+    private javax.swing.JTable part2Bt;
     private javax.swing.JButton validerBt;
     // End of variables declaration//GEN-END:variables
 }
