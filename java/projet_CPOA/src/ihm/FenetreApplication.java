@@ -5,6 +5,7 @@
 package ihm;
 
 import accesAuxDonnees.DaoPhoto;
+import accesAuxDonnees.FTPUploadfile;
 import java.sql.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -14,6 +15,7 @@ import metier.Film;
 import metier.LigneMariage;
 import metier.Photo;
 import metier.Vip;
+import metier.emplacementPhoto;
 import modelVip.ModeleJComboBoxGenre;
 import modelVip.ModeleJTableMariage;
 import modelVip.ModeleJTableVip;
@@ -282,14 +284,21 @@ public class FenetreApplication extends javax.swing.JFrame {
     private void addPhotoBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addPhotoBtActionPerformed
         // TODO add your handling code here:
         try {
+            emplacementPhoto chemin = new emplacementPhoto();
             Photo laPhoto = new Photo();
             int ligne1 = laTable.getSelectedRow();            
             int numVip1=(int)laTable.getValueAt(ligne1,0);
             laPhoto.setNumVip(numVip1);
-              
-            FenetrePhoto fenPhoto = new FenetrePhoto(this,laPhoto);
-            if (fenPhoto.doModal() == true) {
-                leDaoPhoto.insererLaPhoto(laPhoto);
+            int numSequence=leDaoPhoto.returnMax(numVip1);
+            numSequence++;
+            laPhoto.setNumSequence(numSequence);            
+            FenetrePhoto fenPhoto = new FenetrePhoto(this,laPhoto,chemin);
+            if(fenPhoto.doModal() == true)
+            {
+                
+                FTPUploadfile charger=new FTPUploadfile(chemin.getChemin_src(),chemin.getChemin_dest(),laPhoto);
+                leDaoPhoto.insererPhoto(laPhoto);
+                fenPhoto.passageFalse();
             }
         } catch (Exception e) {
             System.out.println("Exception pour l'ajout photo : " + e.getMessage());

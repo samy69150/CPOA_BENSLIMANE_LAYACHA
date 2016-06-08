@@ -132,9 +132,23 @@ textarea
 	font-family: Imprint MT Shadow;
 	background-color:#FFDEAD;
 }
-.menuFP
+#lesVip
 {
-
+	border-style:solid;
+	border-color:black;
+	border=1px;
+	size:1px;
+	border-radius: 25px;
+	text-align: center;
+	margin-right:10%;
+	margin-left:10%;
+}
+.photoVip
+{
+	border:6px solid grey;
+	margin-right:10px;
+	width:15%;
+	height:300px;
 }
 .menuDeroulF
 {

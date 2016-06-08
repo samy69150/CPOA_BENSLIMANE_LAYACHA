@@ -11,8 +11,9 @@
 					<header class="haut">
 						<h1>The VIP</h1>
 						<div class="boutton">
-							<a href="index.php?page=accueil" class="btn">Accueil  |</a>
-							<a href="index.php?page=lesVip" class="btn">VIP  |</a> 
+							<a href="index.php" class="btn">Accueil  |</a>
+							<a href="index.php?page=lesVip" class="btn">VIP  |</a>
+							<a href="index.php?page=lesFilms" class="btn">Films </a> 
 						</div>
 						<div class="boutton2">
 							<a href="http://www.facebook.com/sharer.php?u=http://iutdoua-webetu.univ-lyon1.fr/~p1422662/PETUD/index3.php" target="_blank"><img class="logoFb" src="assets/images/logoFacebook.png" alt="logo Facebook"/></a>
@@ -24,7 +25,7 @@
 						</div><br><br>
 				</div>
 				<footer>
-					<br>LAYACHA Yohan Adel -  BENSLIMANE Samy
+					<br>LAYACHA Yohan Adel -  BENSLIMANE Samy 
 				</footer>
 			</div>
 		</BODY>

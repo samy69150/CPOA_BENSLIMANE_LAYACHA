@@ -9,7 +9,7 @@ if(isset($_GET['num']))
 	$Vip= new vipModel();
 	$vipNomPre=$Vip->nomPrenomVip($_GET['num']);
 		
-				echo '<h2>Photo: ';
+				echo '<h2>Photo ('.$_GET['sequence'].'): ';
 				if($vipNomPre['codeRole']=='A')
 				{
 					echo $vipNomPre['nomVip'].' '.$vipNomPre['prenomVip'].' (Acteur)</h2> ';
@@ -31,12 +31,12 @@ if(isset($_GET['num']))
 				} 
 				
    $Vip= new vipModel();
-	$photo=$Vip->afficherPhoto($_GET['num']);
+	$photo=$Vip->vipPhoto($_GET['num'],$_GET['sequence']);
 	
-	foreach($photo as $data)
-		{
-			echo '<a href="index.php?page=leVip&type=photo&num='.$_GET['num'].'&sequence='.$data['numSequence'].'"><img class="photoVip" src="assets/photosVip/'.$_GET['num'].'_'.$data['numSequence'].'.jpg" alt=""/></a>';
-		}
+	echo ' <img class="photoVip" src="assets/photosVip/'.$_GET['num'].'_'.$photo['numSequence'].'.jpg" alt=""/><br><br>';
+	echo '<strong>Date </strong> : '.$photo['date'].' <br><br>';
+	echo '<strong>Lieu </strong> : '.$photo['lieu'].' <br><br>';
+	
 
 }
 

@@ -12,7 +12,7 @@ class vipModel extends Model
 	{
 		$sql= 'select * from Vip where numVip=?';
 		$req=$this->executerRequete($sql,array($numVip));
-		$resultat=$req->fetchAll();
+		$resultat=$req->fetch();
 		return $resultat;
 	}
 
@@ -32,14 +32,29 @@ class vipModel extends Model
 		
 	public function afficherPhoto($numVip) 
 	{
-		$sql= 'select * from Photo where numVip=?';
+		$sql= 'select * from PhotoVip where numVip=?';
 		$req=$this->executerRequete($sql,array($numVip));
 		$resultat=$req->fetchAll();
 		return $resultat;
 	}
+		public function vipPhoto($numVip,$sequence) 
+	{
+		$sql= 'select * from PhotoVip where numVip=? AND numSequence=?';
+		$req=$this->executerRequete($sql,array($numVip,$sequence));
+		$resultat=$req->fetch();
+		return $resultat;
+	}
+	
 	public function numeroVisa($numVip) 
 	{
 		$sql= 'select numVisa from Realisation where numVip=?';
+		$req=$this->executerRequete($sql,array($numVip));
+		$resultat=$req->fetchAll();
+		return $resultat;
+	}
+		public function numeroVisaA($numVip) 
+	{
+		$sql= 'select numVisa from Casting where numVip=?';
 		$req=$this->executerRequete($sql,array($numVip));
 		$resultat=$req->fetchAll();
 		return $resultat;
@@ -48,9 +63,32 @@ class vipModel extends Model
 	{
 		$sql= 'select * from Film where numVisa=?';
 		$req=$this->executerRequete($sql,array($numVisa));
+		$resultat=$req->fetch();
+		return $resultat;
+	}
+		public function film() 
+	{
+		$sql= 'select * from Film';
+		$req=$this->executerRequete($sql,null);
 		$resultat=$req->fetchAll();
 		return $resultat;
 	}
+		public function casting($numVisa) 
+	{
+		$sql= 'select * from Casting where numVisa=?';
+		$req=$this->executerRequete($sql,array($numVisa));
+		$resultat=$req->fetchAll();
+		return $resultat;
+	}
+	public function realisation($numVisa) 
+	{
+		$sql= 'select * from Realisation where numVisa=?';
+		$req=$this->executerRequete($sql,array($numVisa));
+		$resultat=$req->fetch();
+		return $resultat;
+	}
+	
+	
 	
 	
 	

@@ -8,61 +8,55 @@ if(isset($_GET['num']))
 {
 	$Vip= new vipModel();
 	$vipNomPre=$Vip->nomPrenomVip($_GET['num']);
-		foreach($vipNomPre as $data)
-			{
-				echo '<h2>Le compte de : ';
-				if($data['codeRole']=='A')
+	
+				echo '<h2>';
+				if($vipNomPre['codeRole']=='A')
 				{
-					echo $data['nomVip'].' '.$data['prenomVip'].' (Acteur)</h2> ';
+					echo $vipNomPre['nomVip'].' '.$vipNomPre['prenomVip'].' (Acteur)</h2> ';
 				}
 				else
 				{
-					if($data['codeRole']=='R')
+					if($vipNomPre['codeRole']=='R')
 					{
-						echo $data['nomVip'].' '.$data['prenomVip'].' (Realisateur)</h2> ';
+						echo $vipNomPre['nomVip'].' '.$vipNomPre['prenomVip'].' (Realisateur)</h2> ';
 					}
 					else
 					{
-						if($data['codeRole']=='NA')
+						if($vipNomPre['codeRole']=='NA')
 						{
-							echo $data['nomVip'].' '.$data['prenomVip'].' (Acteur/Realisateur)</h2> ';
+							echo $vipNomPre['nomVip'].' '.$vipNomPre['prenomVip'].'</h2> ';
 						}
 						
 					}
 				}
-			}
+			
 		echo'
 			  <div id="ficheTech">';
-	foreach($vipNomPre as $data)
-			{
+	
 				echo' 
 						<p id="fich">Fiche Technique</p>
-					  <p>* Nom : '.$data['nomVip'].' </p>
-					  <p>* Prenom : '.$data['prenomVip'].' </p>
-					  <p>* Date de naissance : '.$data['dateNaissance'].' </p>
-					  <p>* Lieu de naissance : '.$data['lieuNaissance'].' </p>
-					  <p>* Pays : '.$data['pays'].' </p> ';
-					if($data['codeStatut']=='M')
+					  <p>* Nom : '.$vipNomPre['nomVip'].' </p>
+					  <p>* Prenom : '.$vipNomPre['prenomVip'].' </p>
+					  <p>* Date de naissance : '.$vipNomPre['dateNaissance'].' </p>
+					  <p>* Lieu de naissance : '.$vipNomPre['lieuNaissance'].' </p>
+					  <p>* Pays : '.$vipNomPre['pays'].' </p> ';
+					if($vipNomPre['codeStatut']=='M')
 					{
 						echo'<p>* Code Statut : Marie </p>';
-						$conjoint=$Vip->afficherVipConjoint($data['numVip']);
+						$conjoint=$Vip->afficherVipConjoint($vipNomPre['numVip']);
 							$nomConj=$Vip->nomPrenomVip($conjoint['leNumVip']);
-							foreach($nomConj as $data3)
-							{
-								echo '<p>* Conjoint : '.$data3['nomVip'].' '.$data3['prenomVip'].'</p>';
-							}
-					
-					
+							
+								echo '<p>* Conjoint : '.$nomConj['nomVip'].' '.$nomConj['prenomVip'].'</p>';
 					}
-					if($data['codeStatut']=='C')
+					if($vipNomPre['codeStatut']=='C')
 					{
 						echo'<p>* Code Statut : Célibataire</p>';
 					}
-					if($data['codeStatut']=='D')
+					if($vipNomPre['codeStatut']=='D')
 					{
 						echo'<p>* Code Statut : Divorcer</p>';
 					}
-			}
+			
 		echo'</div>';			
 				echo'
 			<div class="menuFP">
@@ -83,63 +77,57 @@ else
 	{
 			$Vip= new vipModel();
 			$vipNomPre=$Vip->nomPrenomVip($_POST['liste']);
-			foreach($vipNomPre as $data)
-				{
-					echo '<h2>Le compte de : ';
-					if($data['codeRole']=='A')
+		
+					echo '<h2>';
+					if($vipNomPre['codeRole']=='A')
 					{
-						echo $data['nomVip'].' '.$data['prenomVip'].' (Acteur)</h2> ';
+						echo $vipNomPre['nomVip'].' '.$vipNomPre['prenomVip'].' (Acteur)</h2> ';
 					}
 					else
 					{
-						if($data['codeRole']=='R')
+						if($vipNomPre['codeRole']=='R')
 						{
-							echo $data['nomVip'].' '.$data['prenomVip'].' (Realisateur)</h2> ';
+							echo $vipNomPre['nomVip'].' '.$vipNomPre['prenomVip'].' (Realisateur)</h2> ';
 						}
 						else
 						{
-							if($data['codeRole']=='NA')
+							if($vipNomPre['codeRole']=='NA')
 							{
-								echo $data['nomVip'].' '.$data['prenomVip'].' (Acteur/Realisateur)</h2> ';
+								echo $vipNomPre['nomVip'].' '.$vipNomPre['prenomVip'].' </h2> ';
 							}
 							
 						}
 					}
-				} 
+				 
 				
 		echo'
 		  <div id="ficheTech">';
-		foreach($vipNomPre as $data)
-				{
+	
 					echo' 
 								<p id="fich">Fiche Technique</p>
-							  <p>* Nom : '.$data['nomVip'].' </p>
-							  <p>* Prenom : '.$data['prenomVip'].' </p>
-							  <p>* Date de naissance : '.$data['dateNaissance'].' </p>
-							  <p>* Lieu de naissance : '.$data['lieuNaissance'].' </p>
-							  <p>* Pays : '.$data['pays'].' </p>';
-					if($data['codeStatut']=='M')
+							  <p>* Nom : '.$vipNomPre['nomVip'].' </p>
+							  <p>* Prenom : '.$vipNomPre['prenomVip'].' </p>
+							  <p>* Date de naissance : '.$vipNomPre['dateNaissance'].' </p>
+							  <p>* Lieu de naissance : '.$vipNomPre['lieuNaissance'].' </p>
+							  <p>* Pays : '.$vipNomPre['pays'].' </p>';
+					if($vipNomPre['codeStatut']=='M')
 					{
 						echo'<p>* Code Statut : Marie </p>';
-							$conjoint=$Vip->afficherVipConjoint($data['numVip']);
+							$conjoint=$Vip->afficherVipConjoint($vipNomPre['numVip']);
 							$nomConj=$Vip->nomPrenomVip($conjoint['leNumVip']);
-							foreach($nomConj as $data3)
-							{
-								echo '<p>* Conjoint : '.$data3['nomVip'].' '.$data3['prenomVip'].'</p>';
-							}
-					
 							
+								echo '<p>* Conjoint : '.$nomConj['nomVip'].' '.$nomConj['prenomVip'].'</p>';			
 					}
-					if($data['codeStatut']=='C')
+					if($vipNomPre['codeStatut']=='C')
 					{
 						echo'<p>* Code Statut : Célibataire</p>';
 					}
-					if($data['codeStatut']=='D')
+					if($vipNomPre['codeStatut']=='D')
 					{
 						echo'<p>* Code Statut : Divorcer</p>';
 					}
 					   
-					}
+					
 			echo'</div>';
 			
 				echo'

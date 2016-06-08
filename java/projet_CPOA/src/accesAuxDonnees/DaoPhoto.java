@@ -22,24 +22,46 @@ public class DaoPhoto {
         this.connexion = connexion;     
     }
     
-    public void insererLaPhoto(Photo laPhoto) throws SQLException
-    {
-        
-    }
-    
     public int returnMax(int LeNumVip) throws SQLException 
     {
+        int numDeLaPhotoBis=0;
         int numDeLaPhoto=0;
-        String requete="select MAX(numSequence) from Photo where numVip=?";
-        PreparedStatement pstmt = connexion.prepareStatement(requete);
-        pstmt.setInt(1,LeNumVip);
-        ResultSet rset = pstmt.executeQuery();
-        while (rset.next()) {
-            numDeLaPhoto = rset.getInt(1);
+        String requeteBis="select count(numSequence) from PhotoVip where numVip=?";
+        PreparedStatement pstmtBis = connexion.prepareStatement(requeteBis);
+        pstmtBis.setInt(1,LeNumVip);
+        ResultSet rsetBis = pstmtBis.executeQuery();
+         while (rsetBis.next()) {
+            numDeLaPhotoBis = rsetBis.getInt(1);
         }
-        rset.close();
+        if(numDeLaPhotoBis!=0)
+        {    
+            String requete="select MAX(numSequence) from PhotoVip where numVip=?";
+            PreparedStatement pstmt = connexion.prepareStatement(requete);
+            pstmt.setInt(1,LeNumVip);
+            ResultSet rset = pstmt.executeQuery();
+            while (rset.next()) {
+                numDeLaPhoto = rset.getInt(1);
+            }
+            rset.close();
+            pstmt.close();
+            return numDeLaPhoto;
+        }
+        else
+        {
+            return numDeLaPhotoBis;
+        }
+    }
+    
+    public void insererPhoto(Photo laPhoto) throws SQLException
+    {
+        String requete = "insert into PhotoVip (numVip,numSequence,date,lieu) values(?,?,?,?)";
+        PreparedStatement pstmt = connexion.prepareStatement(requete);
+        pstmt.setInt(1, laPhoto.getNumVip());
+        pstmt.setInt(2, laPhoto.getNumSequence());
+        pstmt.setDate(3, laPhoto.getDatePhoto());
+        pstmt.setString(4, laPhoto.getLieu());
+        pstmt.executeUpdate();
         pstmt.close();
-        return numDeLaPhoto;
     }
     
 }

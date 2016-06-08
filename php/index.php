@@ -4,6 +4,7 @@
 	include('Model/Model.php');
 	include('Model/Vip.php');
 	
+	
 	if(isset($_GET['page']))
 	{
 		if($_GET['page']=='leVip')
@@ -17,7 +18,15 @@
 				else{
 						if($_GET['type']=='photo')
 						{
-							include('Views/leVipPhoto.php');
+							if(isset($_GET['sequence']))
+							{
+								include('Views/laPhoto.php');
+							}
+							else
+							{
+								include('Views/leVipPhoto.php');
+							}
+							
 						}	
 						
 					}
@@ -29,15 +38,23 @@
 		}
 		else
 		{ 
-			if($_GET['page']=='accueil')
+			if($_GET['page']=='lesVip')
 			{
-				include('Views/pageAccueil.php');
+				include('Views/lesVip.php');
 			}
 			else
-			{ 
-				if($_GET['page']=='lesVip')
+			{
+				if($_GET['page']=='lesFilms')
 				{
-					include('Views/lesVip.php');
+					if(isset($_GET['numVisa']))
+					{
+						include('Views/leFilm.php');
+					}
+					else
+					{
+						include('Views/films.php');
+					}
+					
 				}
 			}
 		}
@@ -46,6 +63,11 @@
 	else
 	{
 			include('Views/pageAccueil.php');
+			if(isset($_POST['numVi']))
+			{
+				header('Location: index.php?page=lesFilms&numVisa='.$_POST['numVi']);
+				exit(0);
+		    }
 	}
 
 ?>
