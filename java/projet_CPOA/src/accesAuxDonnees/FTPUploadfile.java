@@ -36,18 +36,18 @@ public class FTPUploadfile {
    
    ftpClient.enterLocalPassiveMode();
    ftpClient.setFileType(FTP.BINARY_FILE_TYPE);
-   result=ftpClient.changeWorkingDirectory(chemin_dest);
-   if (result == true) {
-   System.out.println("Working directory is changed.Your New working directory:");
-        } else {
-                System.out.println("Unable to change");
-        }
-        result = ftpClient.changeToParentDirectory();
-        if (result == true) {
-                System.out.println("Parent directory is changed");
-        } else {
-                System.out.println("Unable to change Parent directory");
-                }
+//   result=ftpClient.changeWorkingDirectory(chemin_dest);
+//   if (result == true) {
+//   System.out.println("Working directory is changed.Your New working directory:");
+//        } else {
+//                System.out.println("Unable to change");
+//        }
+//        result = ftpClient.changeToParentDirectory();
+//        if (result == true) {
+//                System.out.println("Parent directory is changed");
+//        } else {
+//                System.out.println("Unable to change Parent directory");
+//                }
 //   // Approche 1: upload d'un fichier en utilisant InputStream
    File file = new File(chemin_src);
 
@@ -55,12 +55,14 @@ public class FTPUploadfile {
 
    System.out.println("Début de l'upload");
    //résultat de l'upload
-   String nomFichier=String.valueOf(laPhoto.getNumVip())+String.valueOf(laPhoto.getNumSequence()+".jpg");
-   boolean res = ftpClient.storeFile(nomFichier,inputStream);
+   
+   String nomFichier=String.valueOf(laPhoto.getNumVip())+"_"+String.valueOf(laPhoto.getNumSequence()+".jpg");
+   boolean res = ftpClient.storeFile(chemin_dest+nomFichier,inputStream);
    //fermet le flut de lecture
    inputStream.close();
    
    if (res==true) {
+     System.out.print(chemin_src+"\n"+chemin_dest+"\n");
      System.out.println("Le fichier "+nomFichier+" a été transféré avec succès");
    }else{
      System.out.println("Echec de transfert");

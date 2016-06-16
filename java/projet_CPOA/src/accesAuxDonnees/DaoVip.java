@@ -45,6 +45,64 @@ public class DaoVip {
         pstmt.close();     
     }
     
+    public void lireLesVipVoulus(List<Vip> lesVip, String rechercheVip) throws SQLException {
+        String decompositionVip[]=rechercheVip.split(" ");
+        if(decompositionVip.length<=2)
+        {
+            if(decompositionVip.length==1)
+            {
+                String nomRechercheSeul=decompositionVip[0]+"%";
+                String requete = "select * from Vip where nomVip like ? or prenomVip like ?";
+                PreparedStatement pstmt = connexion.prepareStatement(requete);
+                pstmt.setString(1, nomRechercheSeul);
+                pstmt.setString(2, nomRechercheSeul);
+                ResultSet rset = pstmt.executeQuery();
+                while (rset.next()) {       // traitement du résulat
+                    int num = rset.getInt(1);
+                    String nom = rset.getString(2);
+                    String prenom = rset.getString(3);
+                    String civilite = rset.getString(4);
+                    Date dateNaiss = rset.getDate(5);
+                    String lieuNaiss = rset.getString(6);
+                    String role = rset.getString(7);
+                    String pays = rset.getString(8);
+                    String statut = rset.getString(9);
+                    Vip temp = new Vip(num,nom,prenom,civilite,dateNaiss,lieuNaiss,role,pays,statut);
+                    lesVip.add(temp);
+                }
+                rset.close();
+                pstmt.close();
+            }
+            else
+            {
+                String nomRecherche=decompositionVip[0]+"%";
+                String prenomRecherche=decompositionVip[1]+"%";
+                String requete = "select * from Vip where nomVip like ? and prenomVip like ? or nomVip like ? and prenomVip like ?";
+                PreparedStatement pstmt = connexion.prepareStatement(requete);
+                pstmt.setString(1, nomRecherche);
+                pstmt.setString(2, prenomRecherche);
+                pstmt.setString(3, prenomRecherche);
+                pstmt.setString(4, nomRecherche);
+                ResultSet rset = pstmt.executeQuery();
+                while (rset.next()) {       // traitement du résulat
+                    int num = rset.getInt(1);
+                    String nom = rset.getString(2);
+                    String prenom = rset.getString(3);
+                    String civilite = rset.getString(4);
+                    Date dateNaiss = rset.getDate(5);
+                    String lieuNaiss = rset.getString(6);
+                    String role = rset.getString(7);
+                    String pays = rset.getString(8);
+                    String statut = rset.getString(9);
+                    Vip temp = new Vip(num,nom,prenom,civilite,dateNaiss,lieuNaiss,role,pays,statut);
+                    lesVip.add(temp);
+                }
+                rset.close();
+                pstmt.close();
+            } 
+        }
+    }
+    
     public int returnMax() throws SQLException 
     {
         int numVip=0;

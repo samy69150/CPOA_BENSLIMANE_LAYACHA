@@ -27,6 +27,11 @@ public class FenetreSaisieVip extends javax.swing.JDialog {
         initComponents();
         
     }
+    
+    public boolean doModal() {
+        setVisible(true);
+        return etatSortie;
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -37,53 +42,65 @@ public class FenetreSaisieVip extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        prenomBt = new javax.swing.JTextField();
-        NomBt = new javax.swing.JTextField();
-        lbNom = new javax.swing.JLabel();
-        lbJob = new javax.swing.JLabel();
-        btValid = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
+        lbNom = new javax.swing.JLabel();
+        NomBt = new javax.swing.JTextField();
+        prenomBt = new javax.swing.JTextField();
+        lbJob = new javax.swing.JLabel();
         civiliteVip = new javax.swing.JLabel();
+        CiviliteBt = new javax.swing.JComboBox();
+        dateNaissanceBt = new com.toedter.calendar.JDateChooser();
         dateNaiss = new javax.swing.JLabel();
         lieuNaiss = new javax.swing.JLabel();
+        lieuNaissBt = new javax.swing.JTextField();
+        roleBt = new javax.swing.JComboBox();
         CodeRole = new javax.swing.JLabel();
         pays = new javax.swing.JLabel();
         statut = new javax.swing.JLabel();
-        CiviliteBt = new javax.swing.JComboBox();
-        lieuNaissBt = new javax.swing.JTextField();
-        paysBt = new javax.swing.JTextField();
-        roleBt = new javax.swing.JComboBox();
         codeStatutBt = new javax.swing.JComboBox();
-        dateNaissanceBt = new com.toedter.calendar.JDateChooser();
+        paysBt = new javax.swing.JTextField();
+        btValid = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Saisie d'un employé");
 
-        lbNom.setText("Nom ");
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
-        lbJob.setText("Prenom");
+        jPanel2.setBackground(new java.awt.Color(153, 0, 0));
 
-        btValid.setText("Valider");
-        btValid.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btValidActionPerformed(evt);
-            }
-        });
-
-        jLabel1.setFont(new java.awt.Font("Georgia", 0, 15)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Monotype Corsiva", 1, 27)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Inserer un VIP");
 
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(114, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(112, 112, 112))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1)
+                .addContainerGap(21, Short.MAX_VALUE))
+        );
+
+        jPanel3.setBackground(new java.awt.Color(0, 204, 204));
+
+        lbNom.setFont(new java.awt.Font("Garamond", 0, 16)); // NOI18N
+        lbNom.setText("Nom de famille");
+
+        lbJob.setFont(new java.awt.Font("Garamond", 0, 16)); // NOI18N
+        lbJob.setText("Prenom");
+
+        civiliteVip.setFont(new java.awt.Font("Garamond", 0, 16)); // NOI18N
         civiliteVip.setText("Civilite");
-
-        dateNaiss.setText("Date de naissance");
-
-        lieuNaiss.setText("Lieu de naissance");
-
-        CodeRole.setText("Code role");
-
-        pays.setText("pays");
-
-        statut.setText("Statut");
 
         CiviliteBt.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Mr", "Mme" }));
         CiviliteBt.addActionListener(new java.awt.event.ActionListener() {
@@ -92,9 +109,35 @@ public class FenetreSaisieVip extends javax.swing.JDialog {
             }
         });
 
+        dateNaissanceBt.setDateFormatString("d-MM-yyyy");
+
+        dateNaiss.setFont(new java.awt.Font("Garamond", 0, 16)); // NOI18N
+        dateNaiss.setText("Date de naissance");
+
+        lieuNaiss.setFont(new java.awt.Font("Garamond", 0, 16)); // NOI18N
+        lieuNaiss.setText("Lieu de naissance");
+
         lieuNaissBt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 lieuNaissBtActionPerformed(evt);
+            }
+        });
+
+        roleBt.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "A", "R", "NA" }));
+
+        CodeRole.setFont(new java.awt.Font("Garamond", 0, 16)); // NOI18N
+        CodeRole.setText("Code role");
+
+        pays.setFont(new java.awt.Font("Garamond", 0, 16)); // NOI18N
+        pays.setText("Pays d'origine");
+
+        statut.setFont(new java.awt.Font("Garamond", 0, 16)); // NOI18N
+        statut.setText("Statut");
+
+        codeStatutBt.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "C", "M", "D" }));
+        codeStatutBt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                codeStatutBtActionPerformed(evt);
             }
         });
 
@@ -104,149 +147,113 @@ public class FenetreSaisieVip extends javax.swing.JDialog {
             }
         });
 
-        roleBt.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "A", "R", "NA" }));
-
-        codeStatutBt.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "C", "M", "D" }));
-        codeStatutBt.addActionListener(new java.awt.event.ActionListener() {
+        btValid.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        btValid.setText("Valider");
+        btValid.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                codeStatutBtActionPerformed(evt);
+                btValidActionPerformed(evt);
             }
         });
 
-        dateNaissanceBt.setDateFormatString("d-MM-yyyy");
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(statut)
+                    .addComponent(pays)
+                    .addComponent(CodeRole)
+                    .addComponent(dateNaiss)
+                    .addComponent(civiliteVip)
+                    .addComponent(lbJob, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lieuNaiss)
+                    .addComponent(lbNom))
+                .addGap(42, 42, 42)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(prenomBt)
+                    .addComponent(NomBt)
+                    .addComponent(dateNaissanceBt, javax.swing.GroupLayout.DEFAULT_SIZE, 156, Short.MAX_VALUE)
+                    .addComponent(lieuNaissBt)
+                    .addComponent(paysBt)
+                    .addComponent(CiviliteBt, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(roleBt, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(codeStatutBt, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(43, 43, 43))
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(146, 146, 146)
+                .addComponent(btValid, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(NomBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lbNom))
+                .addGap(32, 32, 32)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lbJob)
+                    .addComponent(prenomBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(29, 29, 29)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(civiliteVip)
+                    .addComponent(CiviliteBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(27, 27, 27)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(dateNaissanceBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(dateNaiss))
+                .addGap(29, 29, 29)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lieuNaiss)
+                    .addComponent(lieuNaissBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(24, 24, 24)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(CodeRole, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(roleBt, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(26, 26, 26)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(paysBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(pays))
+                .addGap(27, 27, 27)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(statut)
+                    .addComponent(codeStatutBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
+                .addComponent(btValid, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(19, 19, 19))
+        );
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(63, 63, 63)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(statut)
-                                    .addComponent(pays)
-                                    .addComponent(CodeRole))
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(56, 56, 56)
-                                        .addComponent(codeStatutBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(59, 59, 59)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(roleBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(CiviliteBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(prenomBt, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(NomBt, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                .addComponent(paysBt, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                                    .addComponent(lieuNaissBt, javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(dateNaissanceBt, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 141, Short.MAX_VALUE)))))))
-                            .addComponent(dateNaiss)
-                            .addComponent(civiliteVip)
-                            .addComponent(lbJob, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lbNom, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lieuNaiss)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(178, 178, 178)
-                        .addComponent(btValid))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(144, 144, 144)
-                        .addComponent(jLabel1)))
-                .addContainerGap(80, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(NomBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lbNom))
-                .addGap(21, 21, 21)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lbJob)
-                    .addComponent(prenomBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(civiliteVip, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(CiviliteBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(dateNaiss, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(dateNaissanceBt, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lieuNaiss)
-                    .addComponent(lieuNaissBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(CodeRole)
-                    .addComponent(roleBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(pays)
-                    .addComponent(paysBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(codeStatutBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(statut))
-                .addGap(18, 18, 18)
-                .addComponent(btValid)
-                .addGap(20, 20, 20))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btValidActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btValidActionPerformed
-        // TODO add your handling code here:
-        SimpleDateFormat formateur = new SimpleDateFormat("yyyy-MM-dd");
-        try {
-            leNumVip++;
-            emp.setNumVip(leNumVip);   
-            
-            if (NomBt.getText().isEmpty()) {
-                throw new Exception("champ nom vide");
-            }
-            emp.setNomVip(NomBt.getText());
-            
-            if (prenomBt.getText().isEmpty()) {
-                throw new Exception("champ prenom vide");
-            }
-            emp.setPrenomVip(prenomBt.getText());
-            
-             if (dateNaissanceBt.getDate()==null) {
-                throw new Exception("champ date mariage vide");
-            }
-            emp.setDateNaissance(Date.valueOf(formateur.format(dateNaissanceBt.getDate())));
-            
-            emp.setCivilite(String.valueOf(CiviliteBt.getSelectedItem()));
-            
-            if (lieuNaissBt.getText().isEmpty()) {
-                throw new Exception("champ lieu de naissance vide");
-            }
-            emp.setLieuNaissance(lieuNaissBt.getText());
-            
-            emp.setCodeRole(String.valueOf(roleBt.getSelectedItem()));
-            
-            if (paysBt.getText().isEmpty()) {
-                throw new Exception("champ pays vide");
-            }
-            emp.setPays(paysBt.getText());
-            
-            emp.setCodeStatut(String.valueOf(codeStatutBt.getSelectedItem()));
-            
-            etatSortie = true;
-            this.dispose();
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(this, e.getMessage(), "Erreur", JOptionPane.WARNING_MESSAGE);
-        }
-    }//GEN-LAST:event_btValidActionPerformed
 
     private void CiviliteBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CiviliteBtActionPerformed
         // TODO add your handling code here:
@@ -256,19 +263,59 @@ public class FenetreSaisieVip extends javax.swing.JDialog {
         // TODO add your handling code here:
     }//GEN-LAST:event_lieuNaissBtActionPerformed
 
-    private void paysBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_paysBtActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_paysBtActionPerformed
-
     private void codeStatutBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_codeStatutBtActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_codeStatutBtActionPerformed
 
-    public boolean doModal() {
-        setVisible(true);
-        return etatSortie;
-    }
-    
+    private void paysBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_paysBtActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_paysBtActionPerformed
+
+    private void btValidActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btValidActionPerformed
+        // TODO add your handling code here:
+        SimpleDateFormat formateur = new SimpleDateFormat("yyyy-MM-dd");
+        try {
+            leNumVip++;
+            emp.setNumVip(leNumVip);
+
+            if (NomBt.getText().isEmpty()) {
+                throw new Exception("champ nom vide");
+            }
+            emp.setNomVip(NomBt.getText().toUpperCase());
+
+            if (prenomBt.getText().isEmpty()) {
+                throw new Exception("champ prenom vide");
+            }
+            emp.setPrenomVip(prenomBt.getText());
+
+            if (dateNaissanceBt.getDate()==null) {
+                throw new Exception("champ date mariage vide");
+            }
+            emp.setDateNaissance(Date.valueOf(formateur.format(dateNaissanceBt.getDate())));
+
+            emp.setCivilite(String.valueOf(CiviliteBt.getSelectedItem()));
+
+            if (lieuNaissBt.getText().isEmpty()) {
+                throw new Exception("champ lieu de naissance vide");
+            }
+            emp.setLieuNaissance(lieuNaissBt.getText());
+
+            emp.setCodeRole(String.valueOf(roleBt.getSelectedItem()));
+
+            if (paysBt.getText().isEmpty()) {
+                throw new Exception("champ pays vide");
+            }
+            emp.setPays(paysBt.getText());
+
+            emp.setCodeStatut(String.valueOf(codeStatutBt.getSelectedItem()));
+
+            etatSortie = true;
+            this.dispose();
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, e.getMessage(), "Erreur", JOptionPane.WARNING_MESSAGE);
+        }
+    }//GEN-LAST:event_btValidActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox CiviliteBt;
     private javax.swing.JLabel CodeRole;
@@ -279,6 +326,9 @@ public class FenetreSaisieVip extends javax.swing.JDialog {
     private javax.swing.JLabel dateNaiss;
     private com.toedter.calendar.JDateChooser dateNaissanceBt;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JLabel lbJob;
     private javax.swing.JLabel lbNom;
     private javax.swing.JLabel lieuNaiss;

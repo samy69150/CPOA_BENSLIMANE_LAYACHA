@@ -64,33 +64,88 @@ public class FenetreApplication extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        jPanel4 = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
+        rechercheVipBt = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        validerBt = new javax.swing.JButton();
+        reinitialiserBt = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         laTable = new javax.swing.JTable();
+        jPanel5 = new javax.swing.JPanel();
         btInserer = new javax.swing.JButton();
-        jSeparator1 = new javax.swing.JSeparator();
-        mariageBt = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        divorceBt = new javax.swing.JButton();
-        jSeparator2 = new javax.swing.JSeparator();
-        addPhotoBt = new javax.swing.JButton();
-        filmBt = new javax.swing.JButton();
+        modifierVipBt = new javax.swing.JButton();
+        jPanel6 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
+        divorceBt = new javax.swing.JButton();
+        mariageBt = new javax.swing.JButton();
+        jPanel7 = new javax.swing.JPanel();
+        filmBt = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        addPhotoBt = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
-        setTitle("Affichage des employés");
-        addWindowListener(new java.awt.event.WindowAdapter() {
-            public void windowClosing(java.awt.event.WindowEvent evt) {
-                formWindowClosing(evt);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jPanel4.setBackground(new java.awt.Color(255, 255, 255));
+
+        jPanel2.setBackground(new java.awt.Color(153, 0, 51));
+
+        jLabel4.setFont(new java.awt.Font("Monotype Corsiva", 1, 40)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("Gestion du site The VIP");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 401, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(351, 351, 351))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(32, 32, 32)
+                .addComponent(jLabel4)
+                .addContainerGap(42, Short.MAX_VALUE))
+        );
+
+        jPanel3.setBackground(new java.awt.Color(0, 153, 153));
+
+        rechercheVipBt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rechercheVipBtActionPerformed(evt);
+            }
+        });
+
+        jLabel6.setFont(new java.awt.Font("Garamond", 0, 18)); // NOI18N
+        jLabel6.setText("Rechercher un Vip");
+
+        validerBt.setText("Valider");
+        validerBt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                validerBtActionPerformed(evt);
+            }
+        });
+
+        reinitialiserBt.setText("reinitialiser ");
+        reinitialiserBt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                reinitialiserBtActionPerformed(evt);
             }
         });
 
         laTable.setModel(leModele);
         jScrollPane1.setViewportView(laTable);
 
+        jPanel5.setBackground(new java.awt.Color(0, 153, 153));
+
+        btInserer.setFont(new java.awt.Font("MV Boli", 0, 20)); // NOI18N
         btInserer.setText("Inserer un VIP ");
         btInserer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -98,13 +153,82 @@ public class FenetreApplication extends javax.swing.JFrame {
             }
         });
 
-        mariageBt.setText("MARIAGE *");
-        mariageBt.addActionListener(new java.awt.event.ActionListener() {
+        modifierVipBt.setFont(new java.awt.Font("MV Boli", 0, 20)); // NOI18N
+        modifierVipBt.setText("Modifier un VIP *");
+        modifierVipBt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mariageBtActionPerformed(evt);
+                modifierVipBtActionPerformed(evt);
             }
         });
 
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                .addContainerGap(33, Short.MAX_VALUE)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(modifierVipBt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btInserer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(23, 23, 23))
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(37, 37, 37)
+                .addComponent(btInserer, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
+                .addComponent(modifierVipBt, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(41, 41, 41))
+        );
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(rechercheVipBt, javax.swing.GroupLayout.PREFERRED_SIZE, 385, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(validerBt, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(31, 31, 31)
+                        .addComponent(reinitialiserBt)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jScrollPane1)
+                        .addGap(18, 18, 18)
+                        .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18))))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(rechercheVipBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel6))
+                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(validerBt)
+                        .addComponent(reinitialiserBt)))
+                .addGap(24, 24, 24)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(19, Short.MAX_VALUE))
+        );
+
+        jPanel6.setBackground(new java.awt.Color(0, 180, 180));
+
+        jLabel2.setFont(new java.awt.Font("Garamond", 2, 29)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 51, 51));
+        jLabel2.setText("Créer un : ");
+
+        divorceBt.setFont(new java.awt.Font("MV Boli", 0, 20)); // NOI18N
         divorceBt.setText("DIVORCE");
         divorceBt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -112,13 +236,44 @@ public class FenetreApplication extends javax.swing.JFrame {
             }
         });
 
-        addPhotoBt.setText("Ajouter une photo *");
-        addPhotoBt.addActionListener(new java.awt.event.ActionListener() {
+        mariageBt.setFont(new java.awt.Font("MV Boli", 0, 20)); // NOI18N
+        mariageBt.setText("MARIAGE *");
+        mariageBt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                addPhotoBtActionPerformed(evt);
+                mariageBtActionPerformed(evt);
             }
         });
 
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGap(65, 65, 65)
+                .addComponent(mariageBt, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 105, Short.MAX_VALUE)
+                .addComponent(divorceBt, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(76, 76, 76))
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGap(219, 219, 219)
+                .addComponent(jLabel2)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel2)
+                .addGap(33, 33, 33)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(divorceBt, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(mariageBt, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jPanel7.setBackground(new java.awt.Color(0, 180, 180));
+
+        filmBt.setFont(new java.awt.Font("MV Boli", 0, 18)); // NOI18N
         filmBt.setText("Ajouter un film");
         filmBt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -126,126 +281,134 @@ public class FenetreApplication extends javax.swing.JFrame {
             }
         });
 
-        jLabel2.setFont(new java.awt.Font("Garamond", 1, 18)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 51, 51));
-        jLabel2.setText("Créer un : ");
-
-        jLabel3.setFont(new java.awt.Font("Garamond", 1, 18)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Garamond", 2, 29)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 51, 51));
         jLabel3.setText("Ajouter un élément :");
 
-        jLabel4.setFont(new java.awt.Font("Georgia", 1, 22)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(102, 0, 0));
-        jLabel4.setText("Gestion du site Voicela");
+        addPhotoBt.setFont(new java.awt.Font("MV Boli", 0, 18)); // NOI18N
+        addPhotoBt.setText("Ajouter une photo *");
+        addPhotoBt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addPhotoBtActionPerformed(evt);
+            }
+        });
 
         jLabel5.setText("* Vous devez selectionnez un VIP pour enclenchez le processus");
 
-        jButton1.setText("Modifier un VIP *");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
+        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
+        jPanel7.setLayout(jPanel7Layout);
+        jPanel7Layout.setHorizontalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addGap(40, 40, 40)
+                .addComponent(addPhotoBt)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 78, Short.MAX_VALUE)
+                .addComponent(filmBt, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(39, 39, 39))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
+                        .addComponent(jLabel5)
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
+                        .addComponent(jLabel3)
+                        .addGap(155, 155, 155))))
+        );
+        jPanel7Layout.setVerticalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel3)
+                .addGap(41, 41, 41)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(addPhotoBt, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(filmBt, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
+                .addComponent(jLabel5)
+                .addContainerGap())
+        );
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(400, 400, 400)
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(mariageBt)
-                        .addGap(105, 105, 105)))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(divorceBt, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(320, 320, 320))
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(35, 35, 35)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 818, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 818, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(290, 290, 290)
-                                .addComponent(btInserer)
-                                .addGap(93, 93, 93)
-                                .addComponent(jButton1))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(271, 271, 271)
-                                .addComponent(addPhotoBt)
-                                .addGap(80, 80, 80)
-                                .addComponent(filmBt, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(312, 312, 312)
-                        .addComponent(jLabel4))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(364, 364, 364)
-                        .addComponent(jLabel3)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel5)
-                .addContainerGap())
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(27, 27, 27)
-                .addComponent(jLabel4)
-                .addGap(37, 37, 37)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(31, 31, 31)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btInserer, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addGap(15, 15, 15)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(mariageBt, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(divorceBt, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(11, 11, 11)
-                .addComponent(jLabel3)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(filmBt)
-                    .addComponent(addPhotoBt))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
-                .addComponent(jLabel5)
-                .addContainerGap())
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-    
-    
+
+    private void rechercheVipBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rechercheVipBtActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rechercheVipBtActionPerformed
+
+    private void validerBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_validerBtActionPerformed
+        // TODO add your handling code here:
+        try {
+            String rechercheVip=rechercheVipBt.getText();
+            if (rechercheVipBt.getText().isEmpty()) {
+                throw new Exception("Aucun Vip n'a été demandé");
+            }
+            leModele.removeList();
+            leModele.chargerLesVipVoulus(rechercheVip);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, e.getMessage(), "Erreur", JOptionPane.WARNING_MESSAGE);
+        }
+    }//GEN-LAST:event_validerBtActionPerformed
+
+    private void reinitialiserBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reinitialiserBtActionPerformed
+        // TODO add your handling code here:
+        try {
+            leModele.removeList();
+            leModele.chargerLesVip();
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, e.getMessage(), "Erreur", JOptionPane.WARNING_MESSAGE);
+        }
+    }//GEN-LAST:event_reinitialiserBtActionPerformed
+
     private void btInsererActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btInsererActionPerformed
         // TODO add your handling code here:
-         try {
+        try {
             Vip emp = new Vip();
             int numVipMax;
             numVipMax=leModele.returnNumVipMax();
@@ -255,16 +418,33 @@ public class FenetreApplication extends javax.swing.JFrame {
             }
         } catch (Exception e) {
             System.out.println("Exception à l'insertion : " + e.getMessage());
-        } 
-    }//GEN-LAST:event_btInsererActionPerformed
-    
-    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
-        // TODO add your handling code here:
-        int reponse = JOptionPane.showConfirmDialog(this, "Voulez vraiment sortir ?", "Confirmation", JOptionPane.YES_NO_OPTION);
-        if (reponse == JOptionPane.YES_OPTION) {
-            this.dispose();
         }
-    }//GEN-LAST:event_formWindowClosing
+    }//GEN-LAST:event_btInsererActionPerformed
+
+    private void modifierVipBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modifierVipBtActionPerformed
+        // TODO add your handling code here:
+        try {
+            int ligne1 = laTable.getSelectedRow();
+            int numVip=(int)laTable.getValueAt(ligne1, 0);
+            String nomVip=(String)laTable.getValueAt(ligne1, 1);
+            String prenomVip=(String)laTable.getValueAt(ligne1, 2);
+            String civilite=(String)laTable.getValueAt(ligne1, 3);
+            Date dateNaiss=(Date)laTable.getValueAt(ligne1, 4);
+            String lieuNaiss=(String)laTable.getValueAt(ligne1, 5);
+            String codeRole=(String)laTable.getValueAt(ligne1, 6);
+            String pays=(String)laTable.getValueAt(ligne1, 7);
+            String codeStatut=(String)laTable.getValueAt(ligne1, 8);
+            Vip leNouveauVip= new Vip(numVip,nomVip,prenomVip,civilite,dateNaiss,lieuNaiss,codeRole,pays,codeStatut);
+            FenetreModifVip fenModif = new FenetreModifVip(this,leNouveauVip);
+            if (fenModif.doModal() == true) {
+                leModele.removeList();
+                leModele.modifierVip(ligne1,leNouveauVip);
+                leModele.chargerLesVip();//faire dans le dao insererMariage avec les nom et prenom
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this,e.getMessage(), "Erreur", JOptionPane.WARNING_MESSAGE);
+        }
+    }//GEN-LAST:event_modifierVipBtActionPerformed
 
     private void divorceBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_divorceBtActionPerformed
         // TODO add your handling code here:
@@ -281,53 +461,29 @@ public class FenetreApplication extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_divorceBtActionPerformed
 
-    private void addPhotoBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addPhotoBtActionPerformed
-        // TODO add your handling code here:
-        try {
-            emplacementPhoto chemin = new emplacementPhoto();
-            Photo laPhoto = new Photo();
-            int ligne1 = laTable.getSelectedRow();            
-            int numVip1=(int)laTable.getValueAt(ligne1,0);
-            laPhoto.setNumVip(numVip1);
-            int numSequence=leDaoPhoto.returnMax(numVip1);
-            numSequence++;
-            laPhoto.setNumSequence(numSequence);            
-            FenetrePhoto fenPhoto = new FenetrePhoto(this,laPhoto,chemin);
-            if(fenPhoto.doModal() == true)
-            {
-                
-                FTPUploadfile charger=new FTPUploadfile(chemin.getChemin_src(),chemin.getChemin_dest(),laPhoto);
-                leDaoPhoto.insererPhoto(laPhoto);
-                fenPhoto.passageFalse();
-            }
-        } catch (Exception e) {
-            System.out.println("Exception pour l'ajout photo : " + e.getMessage());
-        }
-    }//GEN-LAST:event_addPhotoBtActionPerformed
-
     private void mariageBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mariageBtActionPerformed
         // TODO add your handling code here:
-         try {
+        try {
             Evenement evenement= new Evenement();
             int ligne1 = laTable.getSelectedRow();
-            
+
             int numVip1=(int)laTable.getValueAt(ligne1, 0);
             String codeStatutVip1=(String)laTable.getValueAt(ligne1,8);
             if ("M".equals(codeStatutVip1))
             {
-                throw new Exception("Le VIP selectionné est déjà marrié");
-            }                 
-            //evenement.setVip1(newVip1); 
+                throw new Exception("Le VIP selectionné est déjà marrié !");
+            }
+            //evenement.setVip1(newVip1);
             evenement.setNumVip1(numVip1);
             FenetreMariage fenMariage = new FenetreMariage(this,leModeleMariage,evenement);
-            leModele.removeList();
             if (fenMariage.doModal() == true) {
+                leModele.removeList();
                 leModeleMariage.insererEvenement(evenement);
                 leModele.chargerLesVip();//faire dans le dao insererMariage avec les nom et prenom
             }
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(this, e.getMessage(), "Erreur", JOptionPane.WARNING_MESSAGE);
-        } 
+            JOptionPane.showMessageDialog(this,e.getMessage(), "Erreur", JOptionPane.WARNING_MESSAGE);
+        }
     }//GEN-LAST:event_mariageBtActionPerformed
 
     private void filmBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_filmBtActionPerformed
@@ -341,46 +497,52 @@ public class FenetreApplication extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_filmBtActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void addPhotoBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addPhotoBtActionPerformed
         // TODO add your handling code here:
-         try {
-            int ligne1 = laTable.getSelectedRow();            
-            int numVip=(int)laTable.getValueAt(ligne1, 0);
-            String nomVip=(String)laTable.getValueAt(ligne1, 1);
-            String prenomVip=(String)laTable.getValueAt(ligne1, 2);
-            String civilite=(String)laTable.getValueAt(ligne1, 3);
-            Date dateNaiss=(Date)laTable.getValueAt(ligne1, 4);
-            String lieuNaiss=(String)laTable.getValueAt(ligne1, 5);
-            String codeRole=(String)laTable.getValueAt(ligne1, 6);
-            String pays=(String)laTable.getValueAt(ligne1, 7); 
-            String codeStatut=(String)laTable.getValueAt(ligne1, 8);  
-            Vip leNouveauVip= new Vip(numVip,nomVip,prenomVip,civilite,dateNaiss,lieuNaiss,codeRole,pays,codeStatut);
-            FenetreModifVip fenModif = new FenetreModifVip(this,leNouveauVip);
-            leModele.removeList();
-            if (fenModif.doModal() == true) {
-                leModele.modifierVip(ligne1,leNouveauVip);
-                leModele.chargerLesVip();//faire dans le dao insererMariage avec les nom et prenom
+        try {
+            emplacementPhoto chemin = new emplacementPhoto();
+            Photo laPhoto = new Photo();
+            int ligne1 = laTable.getSelectedRow();
+            int numVip1=(int)laTable.getValueAt(ligne1,0);
+            laPhoto.setNumVip(numVip1);
+            int numSequence=leDaoPhoto.returnMax(numVip1);
+            numSequence++;
+            laPhoto.setNumSequence(numSequence);
+            FenetrePhoto fenPhoto = new FenetrePhoto(this,laPhoto,chemin);
+            if(fenPhoto.doModal() == true)
+            {
+                FTPUploadfile charger=new FTPUploadfile(chemin.getChemin_src(),chemin.getChemin_dest(),laPhoto);
+                leDaoPhoto.insererPhoto(laPhoto);
+                fenPhoto.passageFalse();
             }
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(this, e.getMessage(), "Erreur", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(this,"Saisissez un VIP !", "Erreur", JOptionPane.WARNING_MESSAGE);
         }
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_addPhotoBtActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addPhotoBt;
     private javax.swing.JButton btInserer;
     private javax.swing.JButton divorceBt;
     private javax.swing.JButton filmBt;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JSeparator jSeparator2;
     private javax.swing.JTable laTable;
     private javax.swing.JButton mariageBt;
+    private javax.swing.JButton modifierVipBt;
+    private javax.swing.JTextField rechercheVipBt;
+    private javax.swing.JButton reinitialiserBt;
+    private javax.swing.JButton validerBt;
     // End of variables declaration//GEN-END:variables
 }

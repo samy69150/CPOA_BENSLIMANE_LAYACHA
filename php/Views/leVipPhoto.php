@@ -32,7 +32,8 @@ if(isset($_GET['num']))
 				
    $Vip= new vipModel();
 	$photo=$Vip->afficherPhoto($_GET['num']);
-	
+	$nb=count($photo);
+	echo'<p>il y\'a '.$nb.' photo(s)</p>';
 	foreach($photo as $data)
 		{
 			echo '<a href="index.php?page=leVip&type=photo&num='.$_GET['num'].'&sequence='.$data['numSequence'].'"><img class="photoVip" src="assets/photosVip/'.$_GET['num'].'_'.$data['numSequence'].'.jpg" alt=""/></a>';

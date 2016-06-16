@@ -95,6 +95,11 @@ public class ModeleJTableVip extends AbstractTableModel {
         fireTableDataChanged();  // notification de modification des données à la vue
     }
     
+    public void chargerLesVipVoulus(String rechercheVip) throws SQLException {
+         leDaoVip.lireLesVipVoulus(leConteneur,rechercheVip);
+        fireTableDataChanged();  // notification de modification des données à la vue
+    }
+    
     public void removeList()
     {
         leConteneur.clear();

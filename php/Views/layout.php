@@ -9,7 +9,7 @@
 			<div class="autreBody">
 				<div class="layout">
 					<header class="haut">
-						<h1>The VIP</h1>
+						<h1 class="titreP">The VIP</h1>
 						<div class="boutton">
 							<a href="index.php" class="btn">Accueil  |</a>
 							<a href="index.php?page=lesVip" class="btn">VIP  |</a>

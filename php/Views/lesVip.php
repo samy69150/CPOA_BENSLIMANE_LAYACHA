@@ -5,15 +5,27 @@ ob_start();
 <?php 
 	$Vip= new vipModel();
 	$vipNomPre=$Vip->afficherVip();
-	echo ' ~~ SCOOP ~~ ';
-	echo'<br><br><br>	<div id="lesVip"><br>';
+	echo ' <h2>Nos Star</h2>';
+	echo'<br><br><br>';
 
 	foreach($vipNomPre as $data)
 		{
-			echo '* <a href="index.php?page=leVip&num='.$data['numVip'].'" class="lienVip" >'.$data['nomVip'].' '.$data['prenomVip'].' </a>' ;
-			echo'<br><br>';
+			$nb=0;
+		
+			$photo=$Vip->afficherPhoto($data['numVip']);
+			$nb=count($photo);
+			if($nb!=0)
+			{
+				echo '<a href="index.php?page=leVip&num='.$data['numVip'].'"><img class="photoVipAffiche" src="assets/photosVip/'.$data['numVip'].'_1.jpg" alt="'.$data['nomVip'].'_'.$data['prenomVip'].'" /><br><strong>'.$data['nomVip'].' '.$data['prenomVip'].'</strong></a>';		
+			}
+			else
+			{
+				echo '<a href="index.php?page=leVip&num='.$data['numVip'].'"><img class="photoVipAffiche" src="assets/photosVip/non.png" alt="'.$data['nomVip'].'_'.$data['prenomVip'].'" /><br><strong>'.$data['nomVip'].' '.$data['prenomVip'].'</strong></a>';		
+			}
+			
 		}
-		echo'</div>';
+
+
 ?>
 <?php  
 	$content=ob_get_clean();

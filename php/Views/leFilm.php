@@ -41,9 +41,6 @@ if(isset($_GET['numVisa']))
 													';
 												}			
 								echo'</table>';
-			
-	
-						
 
 	}
 }
