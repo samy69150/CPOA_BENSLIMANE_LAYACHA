@@ -5,8 +5,8 @@ ob_start();
 <?php 
 	$Vip= new vipModel();
 	$vipNomPre=$Vip->afficherVip();
-	echo ' <h2>Nos Star</h2>';
-	echo'<br><br><br>';
+	echo ' <h2 class="nosStar">Nos Stars</h2>';
+	echo'<br>';
 
 	foreach($vipNomPre as $data)
 		{
@@ -16,11 +16,11 @@ ob_start();
 			$nb=count($photo);
 			if($nb!=0)
 			{
-				echo '<a href="index.php?page=leVip&num='.$data['numVip'].'"><img class="photoVipAffiche" src="assets/photosVip/'.$data['numVip'].'_1.jpg" alt="'.$data['nomVip'].'_'.$data['prenomVip'].'" /><br><strong>'.$data['nomVip'].' '.$data['prenomVip'].'</strong></a>';		
+				echo '<a class="AfficheLaClasse" href="index.php?page=leVip&num='.$data['numVip'].'"><img class="photoVipAffiche" src="assets/photosVip/'.$data['numVip'].'_1.jpg" alt="'.$data['nomVip'].'_'.$data['prenomVip'].'" /><br><strong>'.$data['nomVip'].' '.$data['prenomVip'].'</strong></a>';		
 			}
 			else
 			{
-				echo '<a href="index.php?page=leVip&num='.$data['numVip'].'"><img class="photoVipAffiche" src="assets/photosVip/non.png" alt="'.$data['nomVip'].'_'.$data['prenomVip'].'" /><br><strong>'.$data['nomVip'].' '.$data['prenomVip'].'</strong></a>';		
+				echo '<a class="AfficheLaClasse" href="index.php?page=leVip&num='.$data['numVip'].'"><img class="photoVipAffiche" src="assets/photosVip/non.png" alt="'.$data['nomVip'].'_'.$data['prenomVip'].'" /><br><strong>'.$data['nomVip'].' '.$data['prenomVip'].'</strong></a>';		
 			}
 			
 		}

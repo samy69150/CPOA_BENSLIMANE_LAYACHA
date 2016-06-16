@@ -27,7 +27,7 @@ public class ModeleJTableEvenement extends AbstractTableModel {
         // définition du conteneur d'étudiants
         this.leConteneur = new ArrayList<>();
         // définition des noms du champ
-        this.titre = new String[]{"Num VIP 1", "Nom VIP 1", "prenom VIP 1", "Num VIP 2", "Nom VIP 2", "Prenom VIP 2", "Date Mariage", "Lieu Mariage"};
+        this.titre = new String[]{"Num VIP 1", "Nom VIP 1", "prenom VIP 1", "Num VIP 2", "Nom VIP 2", "Prenom VIP 2", "Lieu Mariage", "Date Mariage"};
         // l'objet DAO utilisé
         this.leDao = leDao;
     }

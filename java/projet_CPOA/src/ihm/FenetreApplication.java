@@ -453,6 +453,7 @@ public class FenetreApplication extends javax.swing.JFrame {
             leModeleDivorce.removeList();
             FenetreDivorce fenDivorce = new FenetreDivorce(this,leModeleDivorce,LeCoupleADivorcer);
             if (fenDivorce.doModal() == true) {
+                leModele.removeList();
                 leModeleDivorce.CreerDivorce(LeCoupleADivorcer);
                 leModele.chargerLesVip();//faire dans le dao insererMariage avec les nom et prenom
             }

@@ -169,23 +169,34 @@ textarea
 
 .photoVip
 {
-	border:6px solid grey;
+	border:3px solid black;
+	margin:3%;
+	width:250px;
+	height:300px;
+}
+
+.AfficheLaClasse
+{
+	text-decoration: none;
+	color:black;
+	display: inline-block;
+	margin-bottom:25px;
+}
+
+.photoVipAffiche
+{
+	border:3px solid black;
 	margin-right:10px;
 	width:200px;
 	height:300px;
 }
 
-.photoVipAffiche
+.nosStar
 {
-	border:6px solid grey;
-	margin-right:10px;
-	text-decoration: none;
-	color:black;
-	display: inline-block;
-	margin-left:3%;
-	margin-bottom:2%;
+	color: black;
+	font-size: 40px;
+	font-family:monotype corsiva;
 }
-
 
 .menuDeroulF
 {

@@ -210,7 +210,7 @@ public class FenetrePhoto extends javax.swing.JDialog {
         JFileChooser choix=new JFileChooser();
         choix.setFileSelectionMode(JFileChooser.FILES_ONLY);
         int retour=choix.showOpenDialog(this);
-        chemin.setChemin_dest("/G6S3/projet_CPOA/photosVip/");
+        chemin.setChemin_dest("/public_html/CPOA/php/assets/photosVip/");
         if(retour==JFileChooser.APPROVE_OPTION)
         {
             choix.getSelectedFile();
