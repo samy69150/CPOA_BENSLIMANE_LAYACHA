@@ -82,4 +82,9 @@ public class ModeleJTableMariage extends AbstractTableModel {
         numVip=leDaoEvenement.returnMax();
         return numVip;
     }
+    
+    public void removeList()
+    {
+        leConteneur.clear();
+    }
 }

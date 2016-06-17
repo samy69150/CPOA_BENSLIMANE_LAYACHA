@@ -482,6 +482,7 @@ public class FenetreApplication extends javax.swing.JFrame {
                 leModeleMariage.insererEvenement(evenement);
                 leModele.chargerLesVip();//faire dans le dao insererMariage avec les nom et prenom
             }
+            leModeleMariage.removeList();
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this,e.getMessage(), "Erreur", JOptionPane.WARNING_MESSAGE);
         }
@@ -493,6 +494,8 @@ public class FenetreApplication extends javax.swing.JFrame {
             FenetreAffichageFilms fenFilm = new FenetreAffichageFilms(this,leModeleFilm,leModeleGenre,leModeleActeur,leModeleRealisateur);
             if (fenFilm.doModal() == true) {
             }
+            leModeleFilm.removeList();
+            leModeleGenre.removeList();
         } catch (Exception e) {
             System.out.println("Exception à l'ajout du film : " + e.getMessage());
         }

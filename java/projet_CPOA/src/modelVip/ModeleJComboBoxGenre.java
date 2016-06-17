@@ -53,4 +53,9 @@ public class ModeleJComboBoxGenre extends DefaultComboBoxModel<String>{
     {
         leDaoGenre.chargerLesGenres(listeGenre);
     }
+    
+    public void removeList()
+    {
+        listeGenre.clear();
+    }
 }

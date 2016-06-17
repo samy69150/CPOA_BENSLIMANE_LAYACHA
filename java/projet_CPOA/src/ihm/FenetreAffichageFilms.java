@@ -221,6 +221,7 @@ public class FenetreAffichageFilms extends javax.swing.JDialog {
             if (fenFilm.doModal() == true) {
                 lesFilms.insererInfoFilm(leFilm);
             }
+            lesGenres.removeList();
         } catch (Exception e) {
             System.out.println("Exception à l'ajout du film : " + e.getMessage());
         }

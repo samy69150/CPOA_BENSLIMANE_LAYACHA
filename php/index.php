@@ -1,4 +1,5 @@
 <?php
+	Session_name('p1422662');
 	session_start();
 	//Appel fonctions
 	include('Model/Model.php');
