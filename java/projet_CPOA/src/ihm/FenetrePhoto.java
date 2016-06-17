@@ -19,7 +19,7 @@ import metier.emplacementPhoto;
  */
 public class FenetrePhoto extends javax.swing.JDialog {
 
-    public static String[] toutesLesExtensions={"JPG","JPEG","TIF","BMP","RAW"};
+    public static String[] toutesLesExtensions={"JPG","JPEG","TIF","BMP","RAW","PNG"};
     private boolean etatSortie;
     private Photo laPhoto;
     private emplacementPhoto chemin;

@@ -108,14 +108,11 @@ public class FenetreIdentification extends javax.swing.JDialog {
             }
         });
 
-        txUser.setText("p1422662");
         txUser.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txUserActionPerformed(evt);
             }
         });
-
-        txPasswd.setText("234462");
 
         lbPasswd.setFont(new java.awt.Font("Garamond", 0, 18)); // NOI18N
         lbPasswd.setText("Password");
